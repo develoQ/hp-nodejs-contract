@@ -1,6 +1,15 @@
 {
     "name": "hotpocket-example-contract",
+    "type": "module",
+    "scripts": {
+        "build": "npx ncc build echo-contract.ts -o dist",
+        "start": "npm run build && hpdevkit deploy dist"
+    },
     "dependencies": {
-        "hotpocket-nodejs-contract": "0.5.7"
+        "@vercel/ncc": "^0.38.3",
+        "hotpocket-nodejs-contract": "file:.."
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3"
     }
 }
